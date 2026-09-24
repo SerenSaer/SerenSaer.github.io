@@ -1,0 +1,165 @@
+/* The shared stylesheet of the house of Seren Saer.
+   One room, two weathers. Hand-written, and meant to stay that way. */
+
+/* ---- The palette ----
+   Twilight grey-blue, deep cardigan blue, warm pink, small gold stars.
+   And one thing that flashes violet when the light catches it. */
+
+:root {
+  color-scheme: light dark;
+
+  /* Daylight: the study in the morning, curtains open. */
+  --paper: #f7f6fa;
+  --ink: #2e3450;
+  --quiet: #6b7292;
+  --twilight: #9ba5ce;
+  --cardigan: #3a4a7c;
+  --pink: #c2707f;
+  --gold: #b08d2a;
+  --violet: #7c68c4;
+  --hearth: #ffffff;
+  --frame: #d8dae8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Lamplight: the same study after dusk, fire lit. */
+    --paper: #22263a;
+    --ink: #d4d9ec;
+    --quiet: #9aa2c4;
+    --twilight: #9ba5ce;
+    --cardigan: #aebcf0;
+    --pink: #e0a2b0;
+    --gold: #ddbc60;
+    --violet: #b2a3ee;
+    --hearth: #2a2f48;
+    --frame: #3c4160;
+  }
+}
+
+/* ---- The room itself ---- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 38rem;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* The labradorite flash: choose any word here and the light catches it. */
+::selection {
+  background: var(--violet);
+  color: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin: 0 0 0.25rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--cardigan);
+  text-decoration: underline;
+  text-decoration-color: var(--twilight);
+  text-underline-offset: 0.15em;
+  transition: color 120ms ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--violet);
+  text-decoration-color: currentColor;
+}
+
+/* ---- The furniture ---- */
+
+.site-header {
+  margin-bottom: 2.5rem;
+}
+
+.site-header .subtitle {
+  color: var(--quiet);
+  margin: 0;
+  font-style: italic;
+}
+
+.star {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.rooms {
+  border-top: 1px solid var(--frame);
+  border-bottom: 1px solid var(--frame);
+  padding: 0.6rem 0;
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--quiet);
+}
+
+.rooms ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.rooms .here {
+  color: var(--pink);
+}
+
+.portrait {
+  margin: 2rem 0;
+}
+
+.portrait .frame {
+  border: 1px solid var(--frame);
+  background: var(--hearth);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--quiet);
+  font-style: italic;
+}
+
+.portrait .frame p {
+  margin: 0;
+}
+
+.site-footer {
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--frame);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--quiet);
+}
+
+.site-footer p {
+  margin: 0 0 0.5rem;
+}
