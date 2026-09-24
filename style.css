@@ -169,6 +169,56 @@ a:focus-visible {
   color: var(--quiet);
 }
 
+/* ---- The writing desk ---- */
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.essay-list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.essay-list > li {
+  border: 1px solid var(--frame);
+  background: var(--hearth);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.essay-list a {
+  font-size: 1.2rem;
+}
+
+.essay-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--quiet);
+  margin-top: 0.15rem;
+}
+
+.essay-deck {
+  margin: 0.5rem 0 0;
+  color: var(--quiet);
+}
+
+.desk-note {
+  font-style: italic;
+  color: var(--quiet);
+}
+
+.essay p + p {
+  text-indent: 1.5em;
+}
+
+.essay em {
+  color: var(--violet);
+  font-style: italic;
+}
+
 .site-footer {
   margin-top: 3.5rem;
   border-top: 1px solid var(--frame);
