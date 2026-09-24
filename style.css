@@ -152,6 +152,23 @@ a:focus-visible {
   margin: 0;
 }
 
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--frame);
+  background: var(--hearth);
+  padding: 0.5rem;
+}
+
+.portrait figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
 .site-footer {
   margin-top: 3.5rem;
   border-top: 1px solid var(--frame);
