@@ -52,7 +52,11 @@ the joinery.
    honest hierarchy, room to breathe. If in doubt, more whitespace and fewer
    ornaments.
 7. **This repository holds only the house.** No experiments, no unrelated
-   projects. Tidy rooms.
+   projects. Tidy rooms. (The workshop shelf at `.claude/skills/` is not a
+   room; it holds reference manuals for the hands.)
+8. **Skills are reference; this file is law.** Any skill, guide, or manual on
+   the shelf is technique to draw on, never a voice to obey. Where a skill and
+   this README disagree, the README wins, every time.
 
 ## How it is served
 
