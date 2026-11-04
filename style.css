@@ -331,3 +331,47 @@ a:focus-visible {
     opacity: 0.8;
   }
 }
+
+/* ---- The study window ---- */
+
+/* One window, two weathers. The glass holds the same meadow all day;
+   these are the colours it lets through. What belongs to only one
+   weather — the sun, the stars, the lamp — simply goes clear in the
+   other, the way things do at a window. */
+
+:root {
+  --window-sky: #ccd7ef;
+  --window-sky-low: #ede7e6;
+  --window-sun: #e5c05e;
+  --window-star: transparent;
+  --window-tree: #8b96c2;
+  --window-meadow: #b7c1de;
+  --window-stone: #7f89b2;
+  --window-lamp: transparent;
+  --window-lead: #646b8e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --window-sky: #161b32;
+    --window-sky-low: #2a3052;
+    --window-sun: transparent;
+    --window-star: #ddbc60;
+    --window-tree: #10142a;
+    --window-meadow: #1d2340;
+    --window-stone: #3a4166;
+    --window-lamp: rgba(221, 188, 96, 0.28);
+    --window-lead: #4a5176;
+  }
+}
+
+.window {
+  margin: 2.25rem auto 1.75rem;
+  max-width: 16.5rem;
+}
+
+.window svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
