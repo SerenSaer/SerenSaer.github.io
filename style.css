@@ -219,6 +219,42 @@ a:focus-visible {
   font-style: italic;
 }
 
+/* ---- The wall at the meadow's edge ---- */
+
+/* Golden hour in both weathers: by day the low sun washes down the page;
+   after dusk, what the stone still holds of it. */
+.wall {
+  --late-sun: rgba(176, 141, 42, 0.13);
+  background-image: linear-gradient(180deg, var(--late-sun), rgba(176, 141, 42, 0) 24rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  .wall {
+    --late-sun: rgba(221, 188, 96, 0.1);
+  }
+}
+
+.horizon {
+  margin: 2.25rem 0;
+}
+
+.horizon svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The labradorite stone. It flashes when the light catches it. */
+.horizon .labradorite {
+  fill: var(--violet);
+  fill-opacity: 0.3;
+  transition: fill-opacity 400ms ease;
+}
+
+.horizon .labradorite:hover {
+  fill-opacity: 0.6;
+}
+
 .site-footer {
   margin-top: 3.5rem;
   border-top: 1px solid var(--frame);
