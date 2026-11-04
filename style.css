@@ -266,3 +266,68 @@ a:focus-visible {
 .site-footer p {
   margin: 0 0 0.5rem;
 }
+
+/* ---- Pin's room ---- */
+
+/* Pin's own inks: the house palette, mixed for fur, robe, and wand
+   in both weathers. Dusk-blue shading to periwinkle, as painted. */
+
+:root {
+  --pin-fur-light: #bac3ea;
+  --pin-fur: #9ba5ce;
+  --pin-fur-deep: #767fae;
+  --pin-robe: #3a4a7c;
+  --pin-robe-deep: #2c3a66;
+  --pin-eye: #2b3050;
+  --pin-glint: #fdfdfe;
+  --pin-wood: #8a6a46;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pin-fur-light: #a9b3dd;
+    --pin-fur: #8f99c4;
+    --pin-fur-deep: #6a75a6;
+    --pin-robe: #4a5a94;
+    --pin-robe-deep: #333f68;
+    --pin-eye: #20243c;
+    --pin-glint: #dde3f8;
+    --pin-wood: #a5855d;
+  }
+}
+
+.pin-portrait {
+  margin: 2rem auto;
+  max-width: 24rem;
+}
+
+.pin-portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pin-portrait figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
+/* The wand star breathes, gently, unless the guest prefers stillness. */
+.pin-portrait .wand-glow {
+  animation: pin-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pin-glow {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin-portrait .wand-glow {
+    animation: none;
+    opacity: 0.8;
+  }
+}

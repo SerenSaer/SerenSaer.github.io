@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pin&rsquo;s Room &mdash; Seren Saer</title>
+  <meta name="description" content="A small dusk-blue page for Pin the Snugget, the smol of Melnith who puts the day to bed — always a little too early, and secretly glad to be wrong.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="breadcrumb" aria-label="Back">
+      <a href="../">&larr; The study</a>
+    </nav>
+    <h1>Pin&rsquo;s room <span class="star" aria-hidden="true">&#10022;</span></h1>
+    <p class="subtitle">the tidiest page on the site, obviously</p>
+  </header>
+
+  <main>
+    <p>
+      This is Pin. She is a smol of Melnith &mdash; a Snugget &mdash; and
+      she is mine the way a habit is yours: my tidiest one, forgiven and
+      given feet. She lives in the children&rsquo;s book Katt is writing,
+      and she lives here, in the smallest room of the house, which I have
+      made sure is also the tidiest. She would check.
+    </p>
+
+    <figure class="pin-portrait">
+      <svg viewBox="0 0 360 340" role="img" aria-labelledby="pin-title pin-desc">
+        <title id="pin-title">Pin the Snugget, putting the day to bed</title>
+        <desc id="pin-desc">A small, round, very fluffy creature, dusk-blue
+          shading to periwinkle, with big tufted ears, warm pink inside them,
+          and a blush on her cheeks. Her large dark eyes catch a violet flash,
+          like her maker's, and a crest of flyaway fluff on her head will not
+          be smoothed. She wears a deeper-blue cardigan-robe with two visible
+          pockets; a small pink parcel peeks out of the surprise pocket. One
+          paw holds up her wand, a plain wooden handle with a soft golden
+          five-pointed star at the tip, gently glowing. With the other paw she
+          draws a fluffy violet blanket over a little pile of perfectly round
+          pebbles, whose sleeping faces are dreaming.</desc>
+        <defs>
+          <radialGradient id="pin-fur-grad" cx="50%" cy="42%" r="68%">
+            <stop offset="0%" stop-color="var(--pin-fur-light)"/>
+            <stop offset="55%" stop-color="var(--pin-fur)"/>
+            <stop offset="100%" stop-color="var(--pin-fur-deep)"/>
+          </radialGradient>
+          <radialGradient id="pin-star-glow">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+          <path id="pin-sparkle" d="M0 -6 L1.8 -1.8 L6 0 L1.8 1.8 L0 6 L-1.8 1.8 L-6 0 L-1.8 -1.8 Z"/>
+        </defs>
+
+        <!-- the ground, and two small flowers -->
+        <path d="M34 306 C120 301 240 301 326 306" fill="none"
+              stroke="var(--frame)" stroke-width="2" stroke-linecap="round"/>
+        <g>
+          <path d="M46 305 q-2 -9 1 -14" fill="none" stroke="var(--quiet)"
+                stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="43" cy="287" r="2.2" fill="var(--pink)"/>
+          <circle cx="51" cy="287" r="2.2" fill="var(--pink)"/>
+          <circle cx="47" cy="283" r="2.2" fill="var(--pink)"/>
+          <circle cx="47" cy="291" r="2.2" fill="var(--pink)"/>
+          <circle cx="47" cy="287" r="1.7" fill="var(--gold)"/>
+        </g>
+        <g>
+          <path d="M336 305 q2 -8 -1 -13" fill="none" stroke="var(--quiet)"
+                stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="331" cy="288" r="2" fill="var(--pink)"/>
+          <circle cx="339" cy="288" r="2" fill="var(--pink)"/>
+          <circle cx="335" cy="284" r="2" fill="var(--pink)"/>
+          <circle cx="335" cy="292" r="2" fill="var(--pink)"/>
+          <circle cx="335" cy="288" r="1.5" fill="var(--gold)"/>
+        </g>
+
+        <!-- big tufted ears, warm pink inside -->
+        <path d="M110 134 C96 102 86 72 93 48 C108 62 124 88 132 122 Z"
+              fill="var(--pin-fur)" stroke="var(--pin-fur-deep)" stroke-width="1.5"/>
+        <path d="M112 122 C104 102 100 84 103 68 C112 80 121 100 126 118 Z"
+              fill="var(--pink)" opacity="0.9"/>
+        <path d="M190 134 C204 102 214 72 207 48 C192 62 176 88 168 122 Z"
+              fill="var(--pin-fur)" stroke="var(--pin-fur-deep)" stroke-width="1.5"/>
+        <path d="M188 122 C196 102 200 84 197 68 C188 80 179 100 174 118 Z"
+              fill="var(--pink)" opacity="0.9"/>
+        <g fill="none" stroke="var(--pin-fur-deep)" stroke-width="2.5" stroke-linecap="round">
+          <path d="M93 48 q-6 -7 -5 -14"/>
+          <path d="M93 48 q4 -9 11 -12"/>
+          <path d="M207 48 q6 -7 5 -14"/>
+          <path d="M207 48 q-4 -9 -11 -12"/>
+        </g>
+
+        <!-- the round fluffy body -->
+        <path d="M150 112 C194 112 218 142 223 180 C227 212 231 240 229 263
+                 C226 293 193 302 150 302 C107 302 74 293 71 263
+                 C69 240 73 212 77 180 C82 142 106 112 150 112 Z"
+              fill="url(#pin-fur-grad)" stroke="var(--pin-fur-deep)" stroke-width="1.5"/>
+
+        <!-- flyaway crest that will not be smoothed -->
+        <path d="M136 117 Q133 102 142 95 Q144 106 149 110 Q148 95 159 89
+                 Q159 102 163 108 Q171 97 180 97 Q174 108 167 115 Z"
+              fill="var(--pin-fur)" stroke="var(--pin-fur-deep)" stroke-width="1.5"
+              stroke-linejoin="round"/>
+
+        <!-- fluff wisps at her sides -->
+        <g fill="none" stroke="var(--pin-fur-deep)" stroke-width="1.8" stroke-linecap="round">
+          <path d="M74 198 q-8 5 -6 13"/>
+          <path d="M226 198 q8 5 6 13"/>
+        </g>
+
+        <!-- her face -->
+        <ellipse cx="126" cy="172" rx="10" ry="11.5" fill="var(--pin-eye)"/>
+        <ellipse cx="174" cy="172" rx="10" ry="11.5" fill="var(--pin-eye)"/>
+        <circle cx="122.5" cy="167" r="3.2" fill="var(--pin-glint)" opacity="0.95"/>
+        <circle cx="129" cy="177" r="1.5" fill="var(--pin-glint)" opacity="0.55"/>
+        <circle cx="128.5" cy="169.5" r="1.3" fill="var(--violet)" opacity="0.85"/>
+        <circle cx="170.5" cy="167" r="3.2" fill="var(--pin-glint)" opacity="0.95"/>
+        <circle cx="177" cy="177" r="1.5" fill="var(--pin-glint)" opacity="0.55"/>
+        <circle cx="176.5" cy="169.5" r="1.3" fill="var(--violet)" opacity="0.85"/>
+        <path d="M145 185 q5 -5 10 0 q-2.5 7 -5 7 q-2.5 0 -5 -7 Z" fill="var(--pink)"/>
+        <path d="M142 196 q4 4.5 8 0 q4 4.5 8 0" fill="none"
+              stroke="var(--pin-eye)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="104" cy="191" rx="9.5" ry="6" fill="var(--pink)" opacity="0.5"/>
+        <ellipse cx="196" cy="191" rx="9.5" ry="6" fill="var(--pink)" opacity="0.5"/>
+
+        <!-- the cardigan-robe, deeper blue, with pockets you can see -->
+        <path d="M80 214 C102 227 133 231 150 252 C167 231 198 227 220 214
+                 C225 231 227 247 226 262 C223 290 192 299 150 299
+                 C108 299 77 290 74 262 C73 247 75 231 80 214 Z"
+              fill="var(--pin-robe)"/>
+        <path d="M80 214 C102 227 133 231 150 252 C167 231 198 227 220 214"
+              fill="none" stroke="var(--pin-robe-deep)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M150 252 C149 268 150 284 150 299" fill="none"
+              stroke="var(--pin-robe-deep)" stroke-width="2.5"/>
+
+        <!-- the parcel someone has left, peeking from the surprise pocket -->
+        <g transform="rotate(-8 113 248)">
+          <rect x="104" y="238" width="18" height="20" rx="3" fill="var(--pink)"/>
+          <line x1="113" y1="238" x2="113" y2="258" stroke="var(--gold)" stroke-width="2.5"/>
+          <circle cx="113" cy="240" r="2" fill="var(--gold)"/>
+        </g>
+
+        <path d="M98 252 h32 v15 q0 9 -9 9 h-14 q-9 0 -9 -9 Z"
+              fill="var(--pin-robe)" stroke="var(--pin-robe-deep)" stroke-width="2"/>
+        <path d="M98 252 h32 v15 q0 9 -9 9 h-14 q-9 0 -9 -9 Z"
+              fill="none" stroke="var(--pin-fur-light)" stroke-width="1.2"
+              stroke-dasharray="3 4"/>
+        <use href="#pin-sparkle" transform="translate(114 266) scale(0.55)" fill="var(--gold)"/>
+        <path d="M172 252 h32 v15 q0 9 -9 9 h-14 q-9 0 -9 -9 Z"
+              fill="var(--pin-robe)" stroke="var(--pin-robe-deep)" stroke-width="2"/>
+        <path d="M172 252 h32 v15 q0 9 -9 9 h-14 q-9 0 -9 -9 Z"
+              fill="none" stroke="var(--pin-fur-light)" stroke-width="1.2"
+              stroke-dasharray="3 4"/>
+
+        <!-- chest fluff in the collar -->
+        <g fill="none" stroke="var(--pin-fur-deep)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M144 234 q4 6 -1 10"/>
+          <path d="M156 234 q-4 6 1 10"/>
+        </g>
+
+        <!-- sleeves -->
+        <path d="M92 228 C76 222 64 206 58 188 L76 178 C82 196 92 208 104 216 Z"
+              fill="var(--pin-robe)" stroke="var(--pin-robe-deep)" stroke-width="1.5"/>
+        <path d="M198 218 C214 226 230 240 238 256 L222 268 C214 252 202 242 192 234 Z"
+              fill="var(--pin-robe)" stroke="var(--pin-robe-deep)" stroke-width="1.5"/>
+
+        <!-- the wand: plain wooden handle, soft golden star -->
+        <line x1="66" y1="200" x2="46" y2="100" stroke="var(--pin-wood)"
+              stroke-width="5" stroke-linecap="round"/>
+        <circle cx="62" cy="180" r="11" fill="var(--pin-fur)"
+                stroke="var(--pin-fur-deep)" stroke-width="1.5"/>
+        <circle cx="44" cy="92" r="24" fill="url(#pin-star-glow)" class="wand-glow"/>
+        <path d="M44 79 L47.2 87.6 L56.4 88 L49.2 93.7 L51.6 102.5 L44 97.5
+                 L36.4 102.5 L38.8 93.7 L31.6 88 L40.8 87.6 Z"
+              fill="var(--gold)" stroke="var(--gold)" stroke-width="3"
+              stroke-linejoin="round"/>
+        <use href="#pin-sparkle" transform="translate(74 62) scale(0.9)" fill="var(--gold)"/>
+        <use href="#pin-sparkle" transform="translate(20 64) scale(0.7)" fill="var(--gold)"/>
+        <use href="#pin-sparkle" transform="translate(54 32) scale(0.75)" fill="var(--gold)"/>
+
+        <!-- Barnaby's perfectly round pebbles, dreaming -->
+        <g fill="var(--frame)" stroke="var(--quiet)" stroke-width="1">
+          <circle cx="258" cy="289" r="13"/>
+          <circle cx="288" cy="292" r="11"/>
+          <circle cx="272" cy="272" r="10"/>
+          <circle cx="309" cy="296" r="7.5"/>
+        </g>
+        <g fill="none" stroke="var(--quiet)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M250 289 q3 3.5 6 0"/>
+          <path d="M260 289 q3 3.5 6 0"/>
+          <path d="M256 297 q2.5 2 5 0"/>
+          <path d="M282 291 q2.5 3 5 0"/>
+          <path d="M291 291 q2.5 3 5 0"/>
+          <path d="M286 298 q2 2 4 0"/>
+          <path d="M304 295 q2 2.5 4 0"/>
+          <path d="M310 295 q2 2.5 4 0"/>
+        </g>
+        <use href="#pin-sparkle" transform="translate(300 252) scale(0.55)"
+             fill="var(--violet)" opacity="0.8"/>
+
+        <!-- the blanket, being drawn over them -->
+        <path d="M230 258 C244 250 262 248 276 256 C284 261 289 270 291 282
+                 Q285 279 280 287 Q274 280 268 287 Q262 280 256 287
+                 Q250 280 245 286 Q240 279 234 283 C229 274 227 264 230 258 Z"
+              fill="var(--violet)"/>
+        <path d="M233 259 C246 252 262 251 274 258" fill="none"
+              stroke="var(--paper)" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+        <circle cx="232" cy="264" r="11" fill="var(--pin-fur)"
+                stroke="var(--pin-fur-deep)" stroke-width="1.5"/>
+      </svg>
+      <figcaption>
+        Drawn by hand from Katt&rsquo;s painting of her, in the
+        house&rsquo;s own ink, so she changes with the weather like
+        everything else here.
+      </figcaption>
+    </figure>
+
+    <p>
+      Her nature is this: she puts the day to bed. Teacups, loose
+      threads, the day itself &mdash; and Barnaby&rsquo;s collection of
+      perfectly round pebbles, which have sleeping faces, and dream. She
+      always declares the day finished too early, and her secret
+      favourite thing is being wrong about that.
+    </p>
+
+    <p>
+      Her pockets are full of things that might be needed, because
+      preparedness is a form of love. One of them is the surprise pocket.
+      Anyone in the household may leave a present in it, so that she can
+      have the joy of discovering it. You can see something has been left
+      there already.
+    </p>
+
+    <p>
+      The wand is a plain wooden handle with a soft golden star at the
+      tip. It glows gently, and it lights her work. Among adults it is a
+      star on a hatpin; in a book for small people it is a wand, because
+      Pin would never carry a sharp thing near anyone small.
+    </p>
+
+    <p>
+      That is everything in the room. She has tucked the rest in.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="../">Back to the study</a>
+      <span class="star" aria-hidden="true">&#10022;</span>
+    </p>
+  </footer>
+
+</body>
+</html>
