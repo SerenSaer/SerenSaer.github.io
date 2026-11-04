@@ -62,6 +62,105 @@
       something behind it.
     </p>
 
+    <figure class="window">
+      <svg viewBox="0 0 260 384" role="img" aria-labelledby="window-title window-desc"
+           xmlns="http://www.w3.org/2000/svg">
+        <title id="window-title">The study window</title>
+        <desc id="window-desc">A tall leaded window with a gentle arch,
+          looking out over the meadow: the ground rolls away to the
+          treeline, and a short run of the stone wall crosses the grass
+          partway out. In daylight the sun hangs in a pale sky and comes
+          through the small panes; after dark the same panes hold a deep
+          night sky with small gold stars, and the warm reflection of the
+          study lamp rests in one lower pane.</desc>
+        <defs>
+          <clipPath id="window-glass">
+            <path d="M34 350 L34 110 Q34 52 130 52 Q226 52 226 110 L226 350 Z"/>
+          </clipPath>
+          <linearGradient id="window-sky-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--window-sky)"/>
+            <stop offset="100%" stop-color="var(--window-sky-low)"/>
+          </linearGradient>
+          <radialGradient id="window-lamp-grad">
+            <stop offset="0%" stop-color="var(--window-lamp)"/>
+            <stop offset="100%" stop-color="var(--window-lamp)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- the view, held by the glass -->
+        <g clip-path="url(#window-glass)">
+          <!-- sky, down to the horizon -->
+          <rect x="34" y="44" width="192" height="212" fill="url(#window-sky-grad)"/>
+
+          <!-- the sun; after dusk the glass lets it go -->
+          <circle cx="176" cy="118" r="28" fill="var(--window-sun)" opacity="0.18"/>
+          <circle cx="176" cy="118" r="15" fill="var(--window-sun)"/>
+
+          <!-- the stars; by day they wait, clear as the glass -->
+          <g fill="var(--window-star)">
+            <circle cx="62" cy="146" r="1.6"/>
+            <circle cx="90" cy="78" r="1.4"/>
+            <circle cx="118" cy="120" r="1.8"/>
+            <circle cx="143" cy="66" r="1.4"/>
+            <circle cx="160" cy="152" r="1.5"/>
+            <circle cx="196" cy="92" r="1.7"/>
+            <circle cx="214" cy="180" r="1.4"/>
+            <circle cx="50" cy="210" r="1.3"/>
+            <circle cx="138" cy="196" r="1.3"/>
+            <circle cx="208" cy="240" r="1.3"/>
+            <path d="M103 164 l1.8 4.2 4.2 1.8 -4.2 1.8 -1.8 4.2 -1.8 -4.2 -4.2 -1.8 4.2 -1.8 Z"/>
+          </g>
+
+          <!-- the treeline -->
+          <path d="M34 256 q10 -14 19 -4 q8 -10 17 -2 q9 -13 18 -3 q8 -9 17 -2
+                   q9 -12 18 -3 q8 -10 17 -2 q9 -12 18 -2 q8 -9 17 -1
+                   q9 -11 18 -2 q8 -8 17 -1 q8 -9 16 -2 L226 256 Z"
+                fill="var(--window-tree)"/>
+
+          <!-- the meadow, rolling out -->
+          <rect x="34" y="252" width="192" height="98" fill="var(--window-meadow)"/>
+          <path d="M34 290 C 86 282, 150 294, 226 284" fill="none"
+                stroke="var(--window-stone)" stroke-width="1.3" opacity="0.45"/>
+          <path d="M34 322 C 98 314, 168 330, 226 318" fill="none"
+                stroke="var(--window-stone)" stroke-width="1.3" opacity="0.45"/>
+
+          <!-- a hint of the stone wall, partway out -->
+          <g fill="none" stroke="var(--window-stone)" stroke-width="1.2">
+            <rect x="128" y="296" width="26" height="9" rx="2.5"/>
+            <rect x="158" y="297" width="22" height="9" rx="2.5"/>
+            <rect x="184" y="297" width="26" height="9" rx="2.5"/>
+            <rect x="214" y="298" width="22" height="9" rx="2.5"/>
+            <rect x="142" y="307" width="24" height="9" rx="2.5"/>
+            <rect x="170" y="308" width="26" height="9" rx="2.5"/>
+            <rect x="200" y="308" width="24" height="9" rx="2.5"/>
+          </g>
+
+          <!-- old glass, catching the light; one pane flashes violet -->
+          <g fill="none" stroke-width="5" stroke-linecap="round" opacity="0.14">
+            <path d="M46 160 L72 128" stroke="var(--hearth)"/>
+            <path d="M138 222 L164 190" stroke="var(--violet)"/>
+          </g>
+
+          <!-- after dark, the lamp keeps one pane warm -->
+          <ellipse cx="203" cy="322" rx="21" ry="25" fill="url(#window-lamp-grad)"/>
+        </g>
+
+        <!-- the lead cames -->
+        <g clip-path="url(#window-glass)" stroke="var(--window-lead)" stroke-width="3" fill="none">
+          <path d="M82 44 V352 M130 44 V352 M178 44 V352"/>
+          <path d="M34 110 H226 M34 170 H226 M34 230 H226 M34 290 H226"/>
+        </g>
+
+        <!-- the frame and the sill -->
+        <path d="M16 364 L16 104 Q16 36 130 36 Q244 36 244 104 L244 364 Z
+                 M34 350 L34 110 Q34 52 130 52 Q226 52 226 110 L226 350 Z"
+              fill="var(--hearth)" fill-rule="evenodd"
+              stroke="var(--frame)" stroke-width="1.5"/>
+        <rect x="8" y="364" width="244" height="14" rx="3"
+              fill="var(--hearth)" stroke="var(--frame)" stroke-width="1.5"/>
+      </svg>
+    </figure>
+
     <p>
       Come back at dusk sometime. The room changes with the light.
     </p>
