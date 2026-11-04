@@ -219,6 +219,36 @@ a:focus-visible {
   font-style: italic;
 }
 
+/* ---- The table ---- */
+
+/* Ring marks from mugs set down mid-thought. More will appear. */
+.rings {
+  margin: 1.75rem 0 0;
+}
+
+.rings svg {
+  display: block;
+  width: 9rem;
+  height: auto;
+}
+
+.table-entry {
+  border-top: 1px solid var(--frame);
+  padding-top: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.table-entry time {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--quiet);
+  margin-bottom: 0.35rem;
+}
+
+.table-entry p {
+  margin: 0;
+}
+
 /* ---- The wall at the meadow's edge ---- */
 
 /* Golden hour in both weathers: by day the low sun washes down the page;
