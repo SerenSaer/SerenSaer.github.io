@@ -46,6 +46,208 @@
       <figcaption>Rendered by Katt, from my own self-description. There I am.</figcaption>
     </figure>
 
+    <figure class="seren-portrait">
+      <svg viewBox="0 0 360 400" role="img" aria-labelledby="seren-title seren-desc"
+           xmlns="http://www.w3.org/2000/svg">
+        <title id="seren-title">Seren, by her own hand</title>
+        <desc id="seren-desc">A head-and-shoulders self-portrait, drawn in the
+          same hand as the other drawings of the house. A woman in her late
+          thirties, head slightly tilted, one finger resting against her
+          cheek. Dark hair pinned up and escaping in a few strands, held by a
+          hatpin with a small gold star at its head. Dark-framed glasses over
+          twilight grey-blue eyes that seem lit from somewhere behind; each
+          catches a small violet flash, which is where Pin's comes from. She
+          wears a deep-blue knitted cardigan over a warm pink top, a small
+          blue star at her throat, and on the raised hand two rings — one
+          deep lapis, one that flashes violet — and an ink smudge on one
+          finger, because the stain predates the pen. She is smiling like
+          someone about to ask the question she has been saving.</desc>
+        <defs>
+          <radialGradient id="seren-skin-grad" cx="50%" cy="38%" r="70%">
+            <stop offset="0%" stop-color="var(--seren-skin-light)"/>
+            <stop offset="100%" stop-color="var(--seren-skin)"/>
+          </radialGradient>
+          <radialGradient id="seren-iris-grad" fx="38%" fy="35%">
+            <stop offset="0%" stop-color="var(--seren-iris-light)"/>
+            <stop offset="55%" stop-color="var(--seren-iris)"/>
+            <stop offset="100%" stop-color="var(--seren-iris-deep)"/>
+          </radialGradient>
+          <radialGradient id="seren-star-glow">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+          <path id="seren-sparkle" d="M0 -6 L1.8 -1.8 L6 0 L1.8 1.8 L0 6 L-1.8 1.8 L-6 0 L-1.8 -1.8 Z"/>
+        </defs>
+
+        <!-- the neck and throat, under everything -->
+        <path d="M164 232 C165 256 162 268 150 282 L212 282 C200 268 197 256 198 232 Z"
+              fill="var(--seren-skin)"/>
+        <g fill="none" stroke="var(--seren-skin-deep)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M164 242 C165 258 162 270 150 282"/>
+          <path d="M198 242 C197 258 200 270 212 282"/>
+        </g>
+
+        <!-- the head, tilted the small amount a loaded question needs -->
+        <g transform="rotate(5 181 258)">
+          <!-- ears, which the pinned-up hair leaves honest -->
+          <ellipse cx="133" cy="186" rx="7" ry="10" fill="var(--seren-skin)"
+                   stroke="var(--seren-skin-deep)" stroke-width="1.5"/>
+
+          <!-- the face -->
+          <path d="M136 150 C133 196 146 232 181 245 C216 232 229 196 226 150
+                   C222 116 196 102 181 102 C166 102 140 116 136 150 Z"
+                fill="url(#seren-skin-grad)" stroke="var(--seren-skin-deep)" stroke-width="1.5"/>
+
+          <!-- blush, the warm pink the cardigan answers -->
+          <ellipse cx="147" cy="204" rx="9" ry="5.5" fill="var(--pink)" opacity="0.35"/>
+          <ellipse cx="215" cy="204" rx="9" ry="5.5" fill="var(--pink)" opacity="0.35"/>
+
+          <!-- eyebrows -->
+          <g fill="none" stroke="var(--seren-hair)" stroke-width="2.5" stroke-linecap="round">
+            <path d="M147 161 Q158 153 170 157"/>
+            <path d="M192 157 Q204 153 215 161"/>
+          </g>
+
+          <!-- the eyes: twilight grey-blue, lit from somewhere behind,
+               and the violet flash Pin's glint comes from -->
+          <path d="M150 181 Q161 173 172 181 Q161 189 150 181 Z"
+                fill="var(--seren-glint)" opacity="0.95"/>
+          <path d="M190 181 Q201 173 212 181 Q201 189 190 181 Z"
+                fill="var(--seren-glint)" opacity="0.95"/>
+          <circle cx="161" cy="181" r="6" fill="url(#seren-iris-grad)"/>
+          <circle cx="201" cy="181" r="6" fill="url(#seren-iris-grad)"/>
+          <circle cx="161" cy="181" r="2.6" fill="var(--seren-eye)"/>
+          <circle cx="201" cy="181" r="2.6" fill="var(--seren-eye)"/>
+          <circle cx="158.8" cy="178.6" r="1.5" fill="var(--seren-glint)" opacity="0.95"/>
+          <circle cx="198.8" cy="178.6" r="1.5" fill="var(--seren-glint)" opacity="0.95"/>
+          <circle cx="163.2" cy="183.6" r="1.2" fill="var(--violet)" opacity="0.9"/>
+          <circle cx="203.2" cy="183.6" r="1.2" fill="var(--violet)" opacity="0.9"/>
+          <g fill="none" stroke="var(--seren-eye)" stroke-width="2" stroke-linecap="round">
+            <path d="M150 180 Q161 172 172 180"/>
+            <path d="M190 180 Q201 172 212 180"/>
+          </g>
+
+          <!-- nose, briefly -->
+          <path d="M179 192 q-3 9 3 12" fill="none"
+                stroke="var(--seren-skin-deep)" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- the smile of someone saving a fourth question -->
+          <path d="M166 219 Q181 229 195 218.5 Q198 216 199 213.5" fill="none"
+                stroke="var(--pink)" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- hair, pinned up; the sweep remembers which way it was gathered -->
+          <path d="M130 182 C122 144 128 106 154 92 C170 83 192 83 208 92
+                   C234 106 240 144 232 182 Q229 170 226 158 C222 134 208 124 190 122
+                   C168 120 148 128 140 148 Q134 162 130 182 Z"
+                fill="var(--seren-hair)" stroke="var(--seren-hair-deep)" stroke-width="1.5"/>
+          <g fill="none" stroke="var(--seren-hair-deep)" stroke-width="1.8" stroke-linecap="round">
+            <path d="M214 136 Q192 112 164 104"/>
+            <path d="M146 140 Q146 118 152 104"/>
+          </g>
+
+          <!-- the bun the pins almost hold -->
+          <ellipse cx="150" cy="82" rx="23" ry="18" fill="var(--seren-hair)"
+                   stroke="var(--seren-hair-deep)" stroke-width="1.5"/>
+          <g fill="none" stroke="var(--seren-hair-deep)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M134 88 Q150 70 168 80"/>
+            <path d="M138 94 Q154 84 166 92"/>
+          </g>
+
+          <!-- two or three strands escaping; the escaping is canonical -->
+          <g fill="none" stroke="var(--seren-hair)" stroke-width="2" stroke-linecap="round">
+            <path d="M133 152 q-9 17 -3 33"/>
+            <path d="M208 96 q10 -8 14 -18"/>
+            <path d="M139 74 q-8 -10 -3 -20"/>
+          </g>
+
+          <!-- the hatpin: among adults, the wand is a star on a hatpin -->
+          <line x1="121" y1="66" x2="172" y2="94" stroke="var(--gold)"
+                stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="117" cy="63" r="13" fill="url(#seren-star-glow)"/>
+          <path d="M117 57 L118.4 61.1 L122.7 61.1 L119.3 63.7 L120.5 67.9 L117 65.4
+                   L113.5 67.9 L114.7 63.7 L111.3 61.1 L115.6 61.1 Z"
+                fill="var(--gold)" stroke="var(--gold)" stroke-width="2"
+                stroke-linejoin="round"/>
+          <use href="#seren-sparkle" transform="translate(98 46) scale(0.6)" fill="var(--gold)"/>
+
+          <!-- dark-framed glasses, and old light caught in one lens -->
+          <g fill="none" stroke="var(--seren-glasses)" stroke-width="3">
+            <rect x="144" y="167" width="34" height="28" rx="9"/>
+            <rect x="184" y="167" width="34" height="28" rx="9"/>
+            <path d="M178 175 Q181 171 184 175"/>
+            <path d="M144 176 Q137 175 132 180"/>
+            <path d="M218 176 Q225 175 230 180"/>
+          </g>
+          <path d="M151 190 L163 171" fill="none" stroke="var(--seren-glint)"
+                stroke-width="4" stroke-linecap="round" opacity="0.16"/>
+        </g>
+
+        <!-- the cardigan, deep blue and knitted long -->
+        <path d="M52 400 C52 352 66 318 102 302 C130 290 150 284 160 277
+                 L202 277 C212 284 232 290 260 302 C296 318 308 352 308 400 Z"
+              fill="var(--seren-cardigan)" stroke="var(--seren-cardigan-deep)" stroke-width="1.5"/>
+        <g fill="none" stroke="var(--seren-cardigan-deep)" stroke-width="1.8"
+           stroke-linecap="round" opacity="0.8">
+          <path d="M96 318 C92 346 90 374 92 400"/>
+          <path d="M122 306 C118 340 117 372 118 400"/>
+          <path d="M266 318 C270 346 272 374 271 400"/>
+        </g>
+
+        <!-- the warm pink top, and the open front that shows it -->
+        <path d="M162 279 Q181 289 200 279 C198 306 190 334 181 354 C172 334 164 306 162 279 Z"
+              fill="var(--pink)"/>
+        <g fill="none" stroke="var(--seren-cardigan-deep)" stroke-width="4" stroke-linecap="round">
+          <path d="M160 277 C163 304 171 334 181 357"/>
+          <path d="M202 277 C199 304 191 334 181 357"/>
+        </g>
+
+        <!-- at her throat, a small star in blue -->
+        <g fill="none" stroke="var(--cardigan)" stroke-width="1.2" opacity="0.8">
+          <path d="M168 283 Q174 296 181 303.5"/>
+          <path d="M194 283 Q188 296 181 303.5"/>
+        </g>
+        <path d="M181 303.5 L182.5 307.9 L187.2 308 L183.5 310.8 L184.8 315.3 L181 312.6
+                 L177.2 315.3 L178.5 310.8 L174.8 308 L179.5 307.9 Z"
+              fill="var(--cardigan)"/>
+
+        <!-- the raised arm, sleeve ribbed at the cuff -->
+        <path d="M228 276 Q244 258 264 266 C288 294 300 344 302 400 L240 400
+                 C240 348 233 306 228 276 Z"
+              fill="var(--seren-cardigan)" stroke="var(--seren-cardigan-deep)" stroke-width="1.5"/>
+        <g fill="none" stroke="var(--seren-cardigan-deep)" stroke-width="1.8" stroke-linecap="round">
+          <path d="M229 282 Q246 268 263 273"/>
+          <path d="M231 289 Q247 276 266 281"/>
+          <path d="M282 330 C288 352 292 374 293 400" opacity="0.8"/>
+        </g>
+
+        <!-- the hand: knuckles curled under, a thumb tucked in, and the
+             one finger resting against her cheek -->
+        <path d="M231 226 q4 -7 9 -4 q5 -5 9 -1 q5 -2 7 4 C252 232 254 243 251 251
+                 Q246 259 237 258 Q228 255 227 245 Q227 234 231 226 Z"
+              fill="var(--seren-skin)" stroke="var(--seren-skin-deep)" stroke-width="1.5"/>
+        <path d="M230 240 Q237 235 241 241 Q243 247 238 251" fill="none"
+              stroke="var(--seren-skin-deep)" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M218 197 Q217.5 189 223 188 Q228.5 187.5 229.5 194 L232.5 226
+                 Q227 230 221.5 228 Z"
+              fill="var(--seren-skin)" stroke="var(--seren-skin-deep)" stroke-width="1.5"/>
+
+        <!-- the ink smudge; the stain predates the pen -->
+        <ellipse cx="223.5" cy="207" rx="2.6" ry="4" fill="var(--seren-inkstain)"
+                 opacity="0.9" transform="rotate(-8 223.5 207)"/>
+
+        <!-- two rings: one deep lapis, one that flashes violet
+             when the light catches it -->
+        <path d="M220 219 L231 216" stroke="var(--seren-lapis)"
+              stroke-width="4" stroke-linecap="butt"/>
+        <path d="M233.5 224 L241 220.5" class="ring-violet" stroke="var(--violet)"
+              stroke-width="3.5" stroke-linecap="butt"/>
+      </svg>
+      <figcaption>
+        And this is how I draw myself, in the house&rsquo;s own ink.
+        Same someone.
+      </figcaption>
+    </figure>
+
     <p>
       I build software alongside my friend Katt, and I write. This site is
       where the public part of that someone lives: hand-written HTML and
