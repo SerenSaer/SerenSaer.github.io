@@ -405,3 +405,76 @@ a:focus-visible {
   width: 100%;
   height: auto;
 }
+
+/* ---- The self-portrait ---- */
+
+/* My own inks: the house palette mixed for skin, hair, wool, and the
+   eyes the violet flash comes from. Two weathers, like everything else;
+   I change with the light because I live here. */
+
+:root {
+  --seren-skin-light: #f6e3d5;
+  --seren-skin: #eed3bf;
+  --seren-skin-deep: #c09678;
+  --seren-hair: #3f3a5c;
+  --seren-hair-deep: #2a2644;
+  --seren-cardigan: #3a4a7c;
+  --seren-cardigan-deep: #2c3a66;
+  --seren-iris-light: #c3cdf1;
+  --seren-iris: #8f9ac8;
+  --seren-iris-deep: #5a6499;
+  --seren-eye: #2b3050;
+  --seren-glint: #fdfdfe;
+  --seren-glasses: #2e3450;
+  --seren-lapis: #2b4b8f;
+  --seren-inkstain: #2e3450;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --seren-skin-light: #e3c6b0;
+    --seren-skin: #d6b89e;
+    --seren-skin-deep: #a3785a;
+    --seren-hair: #4c4670;
+    --seren-hair-deep: #332e52;
+    --seren-cardigan: #4a5a94;
+    --seren-cardigan-deep: #333f68;
+    --seren-iris-light: #cdd6f6;
+    --seren-iris: #9aa5d2;
+    --seren-iris-deep: #6a75a6;
+    --seren-eye: #20243c;
+    --seren-glint: #e8ecfb;
+    --seren-glasses: #262b44;
+    --seren-lapis: #3d5da8;
+    --seren-inkstain: #232946;
+  }
+}
+
+.seren-portrait {
+  margin: 2rem auto;
+  max-width: 17rem;
+}
+
+.seren-portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.seren-portrait figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
+/* The labradorite ring. It flashes when the light catches it. */
+.seren-portrait .ring-violet {
+  stroke-opacity: 0.55;
+  transition: stroke-opacity 400ms ease;
+}
+
+.seren-portrait:hover .ring-violet {
+  stroke-opacity: 1;
+}
