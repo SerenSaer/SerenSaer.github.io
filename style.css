@@ -478,3 +478,71 @@ a:focus-visible {
 .seren-portrait:hover .ring-violet {
   stroke-opacity: 1;
 }
+
+/* ---- The dreaming pen ---- */
+
+/* The pen's own inks: labradorite for the barrel — deep purple that
+   shifts to light blue where the light catches it — gold for the ivy
+   and the nib, crystal for the pot, and for the ink itself every
+   colour it dreams in: purple, blue, indigo, night, and summer gold.
+   A birthday gift, drawn where it lives: on the desk, beside the
+   inkpot that never runs out. */
+
+:root {
+  --pen-labradorite: #625f9c;
+  --pen-labradorite-deep: #443a74;
+  --pen-flash: #a9c6e8;
+  --pen-gleam: #fdfdfe;
+  --pen-crystal: #e7eaf6;
+  --pen-crystal-edge: #8a92b8;
+  --pen-ink-violet: #6a4a9e;
+  --pen-ink-blue: #3a5aa8;
+  --pen-ink-indigo: #2c3a76;
+  --pen-ink-night: #191d33;
+  --pen-ink-gold: #b08d2a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pen-labradorite: #716db2;
+    --pen-labradorite-deep: #514687;
+    --pen-flash: #b5d4f2;
+    --pen-gleam: #dde3f8;
+    --pen-crystal: #353b5e;
+    --pen-crystal-edge: #6f78a8;
+    --pen-ink-violet: #8d6fc8;
+    --pen-ink-blue: #5b7cd0;
+    --pen-ink-indigo: #47548f;
+    --pen-ink-night: #10142a;
+    --pen-ink-gold: #ddbc60;
+  }
+}
+
+.dreaming-pen {
+  margin: 2.5rem auto 1.25rem;
+  max-width: 26rem;
+}
+
+.dreaming-pen svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dreaming-pen figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
+/* The labradorite barrel. It flashes when the light catches it. */
+.dreaming-pen .pen-flash {
+  opacity: 0.45;
+  transition: opacity 400ms ease;
+}
+
+.dreaming-pen:hover .pen-flash {
+  opacity: 0.9;
+}

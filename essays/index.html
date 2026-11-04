@@ -83,6 +83,137 @@
       </li>
     </ul>
 
+    <figure class="dreaming-pen">
+      <svg viewBox="0 0 480 150" role="img" aria-labelledby="pen-title pen-desc"
+           xmlns="http://www.w3.org/2000/svg">
+        <title id="pen-title">The dreaming pen, beside its inkpot</title>
+        <desc id="pen-desc">A fountain pen lies on the desk as if just set
+          down. The barrel is labradorite, deep purple shifting to a flash
+          of light blue where the light catches it. Fine golden ivy curls
+          around the posted cap, and the vines line up across the seam,
+          which they only do when the cap is posted properly. The nib is
+          gold, and a line of fresh ink trails from it across the desk,
+          shifting purple to blue to indigo to night-sky black to summer
+          gold, the way the ink dreams. Beside the pen stands a small
+          carved crystal inkpot, faceted, with gold sparks adrift in the
+          ink. It was a birthday gift. The level in the pot has never once
+          gone down.</desc>
+        <defs>
+          <linearGradient id="pen-barrel-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="var(--pen-labradorite-deep)"/>
+            <stop offset="40%" stop-color="var(--pen-labradorite)"/>
+            <stop offset="56%" stop-color="var(--pen-flash)"/>
+            <stop offset="72%" stop-color="var(--pen-labradorite)"/>
+            <stop offset="100%" stop-color="var(--pen-labradorite-deep)"/>
+          </linearGradient>
+          <linearGradient id="pen-cap-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="var(--pen-labradorite-deep)"/>
+            <stop offset="60%" stop-color="var(--pen-labradorite)"/>
+            <stop offset="100%" stop-color="var(--pen-labradorite-deep)"/>
+          </linearGradient>
+          <linearGradient id="pen-ink-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--pen-ink-violet)"/>
+            <stop offset="30%" stop-color="var(--pen-ink-blue)"/>
+            <stop offset="55%" stop-color="var(--pen-ink-indigo)"/>
+            <stop offset="82%" stop-color="var(--pen-ink-night)"/>
+            <stop offset="100%" stop-color="var(--pen-ink-gold)"/>
+          </linearGradient>
+          <linearGradient id="pen-line-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="var(--pen-ink-violet)"/>
+            <stop offset="30%" stop-color="var(--pen-ink-blue)"/>
+            <stop offset="55%" stop-color="var(--pen-ink-indigo)"/>
+            <stop offset="80%" stop-color="var(--pen-ink-night)"/>
+            <stop offset="100%" stop-color="var(--pen-ink-gold)"/>
+          </linearGradient>
+          <path id="pen-sparkle" d="M0 -5 L1.4 -1.4 L5 0 L1.4 1.4 L0 5 L-1.4 1.4 L-5 0 L-1.4 -1.4 Z"/>
+          <path id="pen-leaf" d="M0 0 Q2.6 -2.8 5.8 -1.2 Q3.2 1.8 0 0 Z"/>
+        </defs>
+
+        <!-- the desk edge, and a ring from a mug that supervised -->
+        <path d="M24 127 C150 122 330 122 456 127" fill="none"
+              stroke="var(--frame)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="95" cy="126" rx="21" ry="5.5" fill="none"
+                 stroke="var(--twilight)" stroke-width="1.5" opacity="0.4"/>
+
+        <!-- the inkpot: carved crystal, faceted -->
+        <path d="M375 66 H395 V74 L409 84 V110 L403 120 H367 L361 110 V84 L375 74 Z"
+              fill="var(--pen-crystal)" stroke="var(--pen-crystal-edge)"
+              stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M377 69 H393" fill="none" stroke="var(--pen-crystal-edge)"
+              stroke-width="1" opacity="0.5"/>
+
+        <!-- the ink. purple to blue to indigo to night to summer gold,
+             and the level never once goes down -->
+        <path d="M364 90 L406 90 L406 109 L401 117 L369 117 L364 109 Z"
+              fill="url(#pen-ink-grad)"/>
+        <ellipse cx="385" cy="90" rx="21" ry="3" fill="var(--pen-ink-violet)" opacity="0.9"/>
+        <use href="#pen-sparkle" transform="translate(375 99) scale(0.6)" fill="var(--pen-ink-gold)"/>
+        <use href="#pen-sparkle" transform="translate(394 106) scale(0.45)" fill="var(--pen-ink-gold)"/>
+        <use href="#pen-sparkle" transform="translate(383 112) scale(0.4)" fill="var(--pen-ink-gold)" opacity="0.8"/>
+
+        <!-- the facets, and old light on the shoulder -->
+        <g fill="none" stroke="var(--pen-crystal-edge)" stroke-width="1" opacity="0.45">
+          <path d="M371 77 V118"/>
+          <path d="M385 74 V120"/>
+          <path d="M399 77 V118"/>
+          <path d="M361 84 H409"/>
+        </g>
+        <path d="M365 81 L377 71" fill="none" stroke="var(--pen-gleam)"
+              stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+
+        <!-- a sentence just set down, dreaming already -->
+        <path d="M267 109 Q272 116 279 117.5 C287 112 290 121 298 116 C306 111 309 120 317 115 C324 110.5 328 118 336 114"
+              fill="none" stroke="url(#pen-line-grad)" stroke-width="1.8"
+              stroke-linecap="round"/>
+
+        <!-- the pen, lying where it was set down. the barrel is
+             labradorite; the flash is where the light caught it -->
+        <path d="M124 97 H210 Q224 97 232 101 L244 105.5 V110.5 L232 115 Q224 119 210 119 H124 Z"
+              fill="url(#pen-barrel-grad)" stroke="var(--pen-labradorite-deep)"
+              stroke-width="1.5" stroke-linejoin="round"/>
+        <path class="pen-flash" d="M190 99 L184 117" fill="none"
+              stroke="var(--pen-flash)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M132 101 H206" fill="none" stroke="var(--pen-gleam)"
+              stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+        <!-- the cap, posted -->
+        <path d="M69 95 H124 V121 H69 Q56 121 56 108 Q56 95 69 95 Z"
+              fill="url(#pen-cap-grad)" stroke="var(--pen-labradorite-deep)"
+              stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M64 100 Q74 97 86 97.5" fill="none" stroke="var(--pen-gleam)"
+              stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+        <rect x="119" y="94" width="6" height="28" rx="2" fill="var(--pen-labradorite-deep)"/>
+
+        <!-- the golden ivy, which lines up across the seam only when the
+             cap is posted properly. it is posted properly. -->
+        <g fill="none" stroke="var(--gold)" stroke-width="1.3" stroke-linecap="round">
+          <path d="M63 113 C72 105 78 101 87 104 C95 107 97 111 105 109 C113 107 115 102 122 102"/>
+          <path d="M125 102 C131 102 135 104 139 106"/>
+          <path d="M67 101 C75 108 81 113 91 111 C99 109 103 105 111 106 C117 107 120 110 122 111"/>
+          <path d="M125 111 C129 112 132 112 135 111"/>
+        </g>
+        <g fill="var(--gold)">
+          <use href="#pen-leaf" transform="translate(79 102) rotate(-24)"/>
+          <use href="#pen-leaf" transform="translate(99 110) rotate(155) scale(0.9)"/>
+          <use href="#pen-leaf" transform="translate(113 100) rotate(-18) scale(0.85)"/>
+          <use href="#pen-leaf" transform="translate(85 113) rotate(168) scale(0.8)"/>
+          <use href="#pen-leaf" transform="translate(135 104) rotate(-20) scale(0.8)"/>
+        </g>
+
+        <!-- the nib: gold, and still thinking -->
+        <path d="M241 103 C252 101.5 260 104 267 108 C260 112 252 114.5 241 113 C243.5 109.7 243.5 106.3 241 103 Z"
+              fill="var(--gold)" stroke="var(--gold)" stroke-width="1"
+              stroke-linejoin="round"/>
+        <path d="M266 108 H253" fill="none" stroke="var(--pen-ink-night)"
+              stroke-width="1" stroke-linecap="round"/>
+        <circle cx="253" cy="108" r="1.3" fill="var(--pen-ink-night)"/>
+      </svg>
+      <figcaption>
+        The dreaming pen. The inkpot does not run out; that was never a
+        figure of speech.
+      </figcaption>
+    </figure>
+
     <p class="desk-note">
       More is being written. The inkpot, I am reliably informed, never
       runs out.
