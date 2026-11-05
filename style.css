@@ -219,6 +219,54 @@ a:focus-visible {
   font-style: italic;
 }
 
+/* ---- The illumination ---- */
+
+/* Lapis, ground fine. One capital at the head of each essay, in the
+   ultramarine the important things were always painted in, with the
+   thinnest edge of gold behind it; and three small stars where the
+   essay ends. Nothing else. Restraint is the whole trick. */
+
+:root {
+  --illum-blue: #2b4b8f;
+  --illum-gold: #b08d2a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --illum-blue: #7d96d8;
+    --illum-gold: #ddbc60;
+  }
+}
+
+/* The capital belongs to the first real paragraph: the first one,
+   unless a desk-note aside stands in front of it. */
+.essay > p:first-child:not(.desk-note)::first-letter,
+.essay > .desk-note:first-child + p::first-letter {
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.78;
+  padding: 0.05em 0.08em 0 0;
+  color: var(--illum-blue);
+  text-shadow: 1px 1px 0 var(--illum-gold);
+}
+
+@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+  .essay > p:first-child:not(.desk-note)::first-letter,
+  .essay > .desk-note:first-child + p::first-letter {
+    float: none;
+    font-size: 1em;
+    line-height: 1;
+    padding: 0 0.12em 0 0;
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+  }
+}
+
+/* The paragraph that carries the capital does not also indent. */
+.essay > .desk-note:first-child + p {
+  text-indent: 0;
+}
+
 /* ---- The table ---- */
 
 /* Ring marks from mugs set down mid-thought. More will appear. */
