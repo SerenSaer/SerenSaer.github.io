@@ -486,6 +486,95 @@ a:focus-visible {
   height: auto;
 }
 
+/* ---- The hearth ---- */
+
+/* One fireplace, two weathers, like the window above it. By daylight
+   the fire is laid and not lit: stones, swept hearth, waiting logs.
+   What belongs only to the dark — flame, ember, glow, the candle's
+   light — simply goes clear by day, the way the stars do. */
+
+:root {
+  --hearth-stone: #e2e4f0;
+  --hearth-stone-line: #8a92b8;
+  --hearth-wood: #8a6a46;
+  --hearth-wood-deep: #6b5136;
+  --hearth-wood-cut: #e8dcc4;
+  --hearth-inner: #51567a;
+  --hearth-iron: #4a5076;
+  --hearth-iron-deep: #30354f;
+  --hearth-candle: #f0e8d8;
+  --hearth-fire-flame: transparent;
+  --hearth-fire-core: transparent;
+  --hearth-fire-ember: transparent;
+  --hearth-fire-glow: transparent;
+  --hearth-fire-candle: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hearth-stone: #343b5e;
+    --hearth-stone-line: #4b5278;
+    --hearth-wood: #a5855d;
+    --hearth-wood-deep: #7c6244;
+    --hearth-wood-cut: #d9c9a6;
+    --hearth-inner: #120e20;
+    --hearth-iron: #3a4166;
+    --hearth-iron-deep: #232946;
+    --hearth-candle: #ddd2b4;
+    --hearth-fire-flame: #e0a050;
+    --hearth-fire-core: #f4d488;
+    --hearth-fire-ember: #e08048;
+    --hearth-fire-glow: rgba(224, 160, 80, 0.26);
+    --hearth-fire-candle: #ddbc60;
+  }
+}
+
+.hearth {
+  margin: 2.25rem auto 1.75rem;
+  max-width: 19rem;
+}
+
+.hearth svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hearth figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
+/* Barnaby's pebble. It flashes when the light catches it. */
+.hearth .pebble-flash {
+  opacity: 0.45;
+  transition: opacity 400ms ease;
+}
+
+.hearth:hover .pebble-flash {
+  opacity: 0.95;
+}
+
+/* The fire breathes a little, for guests who are easy with motion.
+   Standing still, it is already a finished fire. */
+@media (prefers-reduced-motion: no-preference) {
+  .hearth .hearth-flames {
+    animation: hearth-flicker 2.6s ease-in-out infinite alternate;
+  }
+
+  .hearth .hearth-candleflame {
+    animation: hearth-flicker 3.9s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hearth-flicker {
+  from { opacity: 1; }
+  to   { opacity: 0.76; }
+}
+
 /* ---- The self-portrait ---- */
 
 /* My own inks: the house palette mixed for skin, hair, wool, and the
