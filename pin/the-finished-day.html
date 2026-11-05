@@ -136,6 +136,70 @@
     <p>
       Hmn-hm.
     </p>
+
+    <figure class="pin-goodnight">
+      <svg viewBox="0 0 300 180" role="img" aria-labelledby="fd-title fd-desc">
+        <title id="fd-title">The finished day, at rest</title>
+        <desc id="fd-desc">The littlest pebble, round as a held breath,
+          fast asleep under the corner of a fluffy violet blanket. Above
+          it, small and gold, the early star is still out, glowing gently
+          now that it has been properly looked at. Pin&rsquo;s wand leans
+          at the edge of the picture, its starlight turned down to a last
+          ember, because there is nothing left to do. Nothing in this
+          picture is doing anything. That is the point of it.</desc>
+        <defs>
+          <radialGradient id="fd-star-glow">
+            <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+          <path id="fd-star" d="M0 -9 L2.2 -3.1 L8.6 -2.8 L3.6 1.2 L5.3 7.3
+                   L0 3.8 L-5.3 7.3 L-3.6 1.2 L-8.6 -2.8 L-2.2 -3.1 Z"/>
+          <path id="fd-sparkle" d="M0 -6 L1.8 -1.8 L6 0 L1.8 1.8 L0 6 L-1.8 1.8 L-6 0 L-1.8 -1.8 Z"/>
+        </defs>
+
+        <!-- the ground, asleep too -->
+        <path d="M28 152 C105 147 195 147 272 152" fill="none"
+              stroke="var(--frame)" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- the early star, still out, being looked at by nobody now -->
+        <circle cx="84" cy="44" r="20" fill="url(#fd-star-glow)"/>
+        <use href="#fd-star" transform="translate(84 44)" fill="var(--gold)"
+             stroke="var(--gold)" stroke-width="2.5" stroke-linejoin="round"/>
+        <use href="#fd-sparkle" transform="translate(108 28) scale(0.6)" fill="var(--gold)"/>
+        <use href="#fd-sparkle" transform="translate(60 62) scale(0.5)" fill="var(--gold)"/>
+
+        <!-- the littlest pebble, round as a held breath -->
+        <circle cx="112" cy="134" r="16" fill="var(--frame)"
+                stroke="var(--quiet)" stroke-width="1"/>
+        <g fill="none" stroke="var(--quiet)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M98 136 q3 3.5 6 0"/>
+          <path d="M108 136 q3 3.5 6 0"/>
+          <path d="M103 144 q2.5 2 5 0"/>
+        </g>
+
+        <!-- the corner of the blanket, tucked -->
+        <path d="M112 121 C134 110 165 106 196 110 C220 114 234 126 240 148
+                 Q233 142 226 149 Q219 142 212 149 Q205 142 198 148
+                 Q191 141 184 147 Q177 141 170 146 Q163 140 156 145
+                 Q149 139 142 144 C130 139 118 132 112 121 Z"
+              fill="var(--violet)"/>
+        <path d="M120 118 C145 109 175 106 198 110" fill="none"
+              stroke="var(--paper)" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+        <use href="#fd-sparkle" transform="translate(232 120) scale(0.5)"
+             fill="var(--violet)" opacity="0.8"/>
+
+        <!-- the wand, leaning, its star turned down to a last ember -->
+        <line x1="256" y1="150" x2="274" y2="80" stroke="var(--pin-wood)"
+              stroke-width="5" stroke-linecap="round"/>
+        <g opacity="0.45">
+          <circle cx="278" cy="70" r="11" fill="url(#fd-star-glow)"/>
+          <use href="#fd-star" transform="translate(278 70) scale(0.75)"
+               fill="var(--gold)" stroke="var(--gold)" stroke-width="2"
+               stroke-linejoin="round"/>
+        </g>
+      </svg>
+      <figcaption>The day, holding what it was given. Easily.</figcaption>
+    </figure>
   </main>
 
   <footer class="site-footer">
