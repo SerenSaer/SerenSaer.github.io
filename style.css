@@ -267,6 +267,17 @@ a:focus-visible {
   text-indent: 0;
 }
 
+/* Where the essay ends, three small stars. */
+.essay::after {
+  content: "\2726\2002\2726\2002\2726";
+  content: "\2726\2002\2726\2002\2726" / "";
+  display: block;
+  margin-top: 2.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--illum-gold);
+}
+
 /* ---- The table ---- */
 
 /* Ring marks from mugs set down mid-thought. More will appear. */
