@@ -372,6 +372,161 @@
     <p>
       Come back at dusk sometime. The room changes with the light.
     </p>
+
+    <figure class="hearth">
+      <svg viewBox="0 0 320 260" role="img" aria-labelledby="hearth-title hearth-desc"
+           xmlns="http://www.w3.org/2000/svg">
+        <title id="hearth-title">The hearth</title>
+        <desc id="hearth-desc">A modest stone fireplace, drawn in the same
+          hand as the window above it. Grey-blue stones stand in two piers
+          under a wooden mantel; the hearth is swept, and the logs are laid
+          ready over their kindling. A small kettle waits on the hob, and on
+          the mantel stand an unlit candle and one of Barnaby's round
+          pebbles, which likes to keep warm. By daylight that is the whole
+          picture: a fire laid and not yet asked for. After dark the same
+          drawing is lit — flames in golds over the logs, embers settling
+          under them, the kettle thinking about it, the candle awake, and a
+          warm glow resting on the stones the way the lamp rests in the
+          window's lower pane.</desc>
+        <defs>
+          <radialGradient id="hearth-fire-glow-grad">
+            <stop offset="0%" stop-color="var(--hearth-fire-glow)"/>
+            <stop offset="100%" stop-color="var(--hearth-fire-glow)" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="hearth-candle-glow-grad">
+            <stop offset="0%" stop-color="var(--hearth-fire-candle)" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="var(--hearth-fire-candle)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- the firebox, swept this morning -->
+        <path d="M96 232 L96 118 Q96 100 114 100 L206 100 Q224 100 224 118 L224 232 Z"
+              fill="var(--hearth-inner)"/>
+
+        <!-- embers; by day they wait, clear as the glass upstairs -->
+        <g fill="var(--hearth-fire-ember)">
+          <circle cx="126" cy="227" r="2.5"/>
+          <circle cx="142" cy="229" r="3"/>
+          <circle cx="157" cy="226" r="2"/>
+          <circle cx="166" cy="228" r="2.6"/>
+          <circle cx="181" cy="227" r="2"/>
+        </g>
+
+        <!-- kindling, then the logs laid over it -->
+        <g fill="none" stroke="var(--hearth-wood-deep)" stroke-width="2" stroke-linecap="round">
+          <path d="M116 226 L158 221"/>
+          <path d="M138 227 L178 223"/>
+          <path d="M126 229 L164 227"/>
+        </g>
+        <g transform="rotate(-5 149 212)">
+          <rect x="108" y="206" width="78" height="13" rx="6.5"
+                fill="var(--hearth-wood)" stroke="var(--hearth-wood-deep)" stroke-width="1.5"/>
+          <ellipse cx="114.5" cy="212.5" rx="4" ry="6" fill="var(--hearth-wood-cut)"
+                   stroke="var(--hearth-wood-deep)" stroke-width="1.5"/>
+          <path d="M126 210 L172 209 M132 215 L166 215" fill="none"
+                stroke="var(--hearth-wood-deep)" stroke-width="1" opacity="0.6"/>
+        </g>
+        <g transform="rotate(4 150 221)">
+          <rect x="112" y="215" width="74" height="13" rx="6.5"
+                fill="var(--hearth-wood)" stroke="var(--hearth-wood-deep)" stroke-width="1.5"/>
+          <ellipse cx="179.5" cy="221.5" rx="4" ry="6" fill="var(--hearth-wood-cut)"
+                   stroke="var(--hearth-wood-deep)" stroke-width="1.5"/>
+          <path d="M120 219 L168 218 M126 224 L160 224" fill="none"
+                stroke="var(--hearth-wood-deep)" stroke-width="1" opacity="0.6"/>
+        </g>
+
+        <!-- the flames; after dusk the logs remember what they are for -->
+        <g class="hearth-flames">
+          <path d="M128 219 C118 202 119 184 131 170 C130 182 138 186 137 177
+                   C144 192 142 208 136 218 Z" fill="var(--hearth-fire-flame)"/>
+          <path d="M150 218 C138 196 140 170 157 150 C154 168 166 172 163 160
+                   C173 182 168 204 160 217 Z" fill="var(--hearth-fire-flame)"/>
+          <path d="M174 219 C167 206 168 192 178 181 C177 191 184 193 182 187
+                   C188 199 186 211 181 218 Z" fill="var(--hearth-fire-flame)"/>
+          <path d="M152 217 C146 202 148 186 157 172 C156 184 163 186 161 179
+                   C166 194 163 208 159 216 Z" fill="var(--hearth-fire-core)"/>
+          <path d="M131 218 C127 208 128 197 134 189 C134 197 138 198 137 194
+                   C140 204 138 213 135 217 Z" fill="var(--hearth-fire-core)"/>
+        </g>
+
+        <!-- the kettle on the hob, patient in both weathers -->
+        <rect x="192" y="224" width="38" height="8" rx="2"
+              fill="var(--hearth-stone)" stroke="var(--hearth-stone-line)" stroke-width="1.5"/>
+        <path d="M196 224 Q195 202 211 202 Q227 202 226 224 Z"
+              fill="var(--hearth-iron)" stroke="var(--hearth-iron-deep)" stroke-width="1.5"/>
+        <path d="M196 212 Q188 210 186 203" fill="none"
+              stroke="var(--hearth-iron)" stroke-width="3.5" stroke-linecap="round"/>
+        <ellipse cx="211" cy="202.5" rx="8.5" ry="3" fill="var(--hearth-iron)"
+                 stroke="var(--hearth-iron-deep)" stroke-width="1.2"/>
+        <circle cx="211" cy="198" r="2.2" fill="var(--hearth-iron-deep)"/>
+        <path d="M201 200 Q211 186 221 200" fill="none"
+              stroke="var(--hearth-iron-deep)" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- the hearthstone, and the slab the broom knows -->
+        <rect x="56" y="232" width="208" height="12" rx="2"
+              fill="var(--hearth-stone)" stroke="var(--hearth-stone-line)" stroke-width="1.5"/>
+        <rect x="40" y="244" width="240" height="9" rx="2"
+              fill="var(--hearth-stone)" stroke="var(--hearth-stone-line)" stroke-width="1.5"/>
+        <g fill="none" stroke="var(--hearth-stone-line)" stroke-width="1" opacity="0.4">
+          <path d="M70 249 Q110 246 150 249"/>
+          <path d="M170 248 Q210 251 250 248"/>
+        </g>
+
+        <!-- the stones, two piers and a lintel; each one chosen -->
+        <g fill="var(--hearth-stone)" stroke="var(--hearth-stone-line)" stroke-width="1.5">
+          <rect x="45" y="75" width="47" height="25" rx="3"/>
+          <rect x="47" y="103" width="45" height="26" rx="3"/>
+          <rect x="45" y="132" width="47" height="24" rx="3"/>
+          <rect x="48" y="159" width="44" height="26" rx="3"/>
+          <rect x="45" y="188" width="47" height="23" rx="3"/>
+          <rect x="47" y="214" width="45" height="18" rx="3"/>
+          <rect x="228" y="75" width="47" height="25" rx="3"/>
+          <rect x="228" y="103" width="45" height="26" rx="3"/>
+          <rect x="228" y="132" width="47" height="24" rx="3"/>
+          <rect x="228" y="159" width="44" height="26" rx="3"/>
+          <rect x="228" y="188" width="47" height="23" rx="3"/>
+          <rect x="228" y="214" width="45" height="18" rx="3"/>
+          <rect x="95" y="75" width="42" height="22" rx="3"/>
+          <rect x="140" y="76" width="42" height="21" rx="3"/>
+          <rect x="185" y="75" width="41" height="22" rx="3"/>
+        </g>
+
+        <!-- after dark, the fire lends its warmth to the stones -->
+        <ellipse cx="150" cy="190" rx="118" ry="96" fill="url(#hearth-fire-glow-grad)"/>
+        <ellipse cx="150" cy="205" rx="55" ry="42" fill="url(#hearth-fire-glow-grad)"/>
+
+        <!-- the mantel, wood with the grain left showing -->
+        <rect x="42" y="70" width="236" height="5" fill="var(--hearth-wood-deep)"/>
+        <rect x="32" y="56" width="256" height="14" rx="3"
+              fill="var(--hearth-wood)" stroke="var(--hearth-wood-deep)" stroke-width="1.5"/>
+        <g fill="none" stroke="var(--hearth-wood-deep)" stroke-width="1" opacity="0.5">
+          <path d="M44 61 Q120 59 200 61 T276 62"/>
+          <path d="M52 66 Q140 68 240 65"/>
+        </g>
+
+        <!-- a candle, lit only when the room needs reminding where it is -->
+        <path d="M64 56 L88 56 L84 50 L68 50 Z"
+              fill="var(--hearth-iron)" stroke="var(--hearth-iron-deep)" stroke-width="1.2"/>
+        <rect x="71" y="28" width="10" height="24" rx="2"
+              fill="var(--hearth-candle)" stroke="var(--hearth-stone-line)" stroke-width="1.2"/>
+        <line x1="76" y1="28" x2="76" y2="24"
+              stroke="var(--hearth-iron-deep)" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="76" cy="20" r="11" fill="url(#hearth-candle-glow-grad)"/>
+        <ellipse class="hearth-candleflame" cx="76" cy="20" rx="3" ry="5.5"
+                 fill="var(--hearth-fire-candle)"/>
+
+        <!-- one of Barnaby's round pebbles, keeping warm -->
+        <ellipse cx="236" cy="50" rx="11" ry="6.5"
+                 fill="var(--hearth-stone)" stroke="var(--hearth-stone-line)" stroke-width="1.5"/>
+        <path class="pebble-flash" d="M229 47 Q234 43 241 45" fill="none"
+              stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <figcaption>
+        The hearth. Laid by day, lit after dark; the pebble is
+        Barnaby&rsquo;s.
+      </figcaption>
+    </figure>
+
   </main>
 
   <footer class="site-footer">
