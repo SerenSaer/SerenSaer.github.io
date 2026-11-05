@@ -762,3 +762,117 @@ a:focus-visible {
   font-style: italic;
   color: var(--violet);
 }
+
+/* ---- The paper copies ---- */
+
+/* When a guest prints a page, the house lends a clean copy: black on
+   white, no doors, no drawings — the ink out there is the reader's own. */
+
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    max-width: 34em;
+    margin: 0;
+    padding: 0;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  /* What paper does not need: the doors, the drawings, the scripted
+     pages of the visitor's book, and the rows of links home. */
+  .rooms,
+  .breadcrumb,
+  .seren-portrait,
+  .window,
+  .pin-portrait,
+  .pin-goodnight,
+  .dreaming-pen,
+  .horizon,
+  .rings,
+  #book-status,
+  #book-pages,
+  noscript,
+  .site-footer p:not(.colophon) {
+    display: none;
+  }
+
+  /* An emptied footer leaves no mark on the paper; where the colophon
+     remains, it stands a little apart, with no furniture around it. */
+  .site-footer {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .site-footer .colophon {
+    margin-top: 2rem;
+  }
+
+  /* Links print as plain text; the ones that leave the house
+     write their address out longhand, so paper can follow them. */
+  a {
+    text-decoration: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+
+  /* The illuminated capital goes plain on paper.
+     Plain is better than broken. */
+  .essay > p:first-child:not(.desk-note)::first-letter,
+  .essay > .desk-note:first-child + p::first-letter {
+    float: none;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    color: #000;
+    text-shadow: none;
+    -webkit-initial-letter: normal;
+    initial-letter: normal;
+  }
+
+  /* Keep the joinery across page breaks: a heading stays with its
+     paragraph, and nothing is sawn through the middle. */
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  li,
+  blockquote,
+  figure,
+  .table-entry,
+  .book-page {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* No light to catch on paper; the flourishes stay home. */
+  ::selection {
+    background: none;
+    color: inherit;
+  }
+}
