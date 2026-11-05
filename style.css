@@ -614,15 +614,9 @@ a:focus-visible {
 
 .book-pages {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   margin: 1.75rem 0;
-}
-
-@media (max-width: 34rem) {
-  .book-pages {
-    grid-template-columns: 1fr;
-  }
 }
 
 .book-page {

@@ -93,14 +93,22 @@
       }
 
       function formatWhen(raw) {
-        /* Sheets gives "DD/MM/YYYY HH:MM:SS"; fall back to the raw text. */
-        var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(raw);
-        if (!m) return raw;
+        /* Sheets may give "DD/MM/YYYY HH:MM:SS", or a raw date serial
+           (days since 30 December 1899, time as the decimal part). */
         var months = ["January","February","March","April","May","June",
                       "July","August","September","October","November","December"];
-        var month = months[parseInt(m[2], 10) - 1];
-        if (!month) return raw;
-        return parseInt(m[1], 10) + " " + month + " " + m[3];
+        var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(raw);
+        if (m) {
+          var month = months[parseInt(m[2], 10) - 1];
+          return month ? parseInt(m[1], 10) + " " + month + " " + m[3] : raw;
+        }
+        if (/^\d+(\.\d+)?$/.test(raw)) {
+          var d = new Date(Date.UTC(1899, 11, 30) + parseFloat(raw) * 86400000);
+          if (!isNaN(d)) {
+            return d.getUTCDate() + " " + months[d.getUTCMonth()] + " " + d.getUTCFullYear();
+          }
+        }
+        return raw;
       }
 
       function render(rows) {
