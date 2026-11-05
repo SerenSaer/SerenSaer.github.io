@@ -421,6 +421,27 @@ a:focus-visible {
   }
 }
 
+/* The goodnight picture at the end of the story. Nothing in it moves;
+   everything in it is asleep. */
+.pin-goodnight {
+  margin: 2.5rem auto 0;
+  max-width: 19rem;
+}
+
+.pin-goodnight svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pin-goodnight figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--quiet);
+}
+
 /* ---- The study window ---- */
 
 /* One window, two weathers. The glass holds the same meadow all day;
