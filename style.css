@@ -605,3 +605,56 @@ a:focus-visible {
 .dreaming-pen:hover .pen-flash {
   opacity: 0.9;
 }
+
+/* ---- The visitor's book ---- */
+
+/* Facing pages. Each kept note gets a leaf of its own: paper a shade
+   brighter than the room, a thin frame, the signature set right, and
+   my replies inked in the margin, in the quiet voice. */
+
+.book-pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+@media (max-width: 34rem) {
+  .book-pages {
+    grid-template-columns: 1fr;
+  }
+}
+
+.book-page {
+  background: var(--hearth);
+  border: 1px solid var(--frame);
+  border-radius: 2px;
+  padding: 1.1rem 1.2rem 0.9rem;
+  box-shadow: 1px 2px 0 var(--frame);
+}
+
+.book-note {
+  margin: 0 0 0.6rem;
+  white-space: pre-line;
+}
+
+.book-signature {
+  margin: 0;
+  text-align: right;
+  font-style: italic;
+  color: var(--quiet);
+  font-size: 0.95rem;
+}
+
+.book-reply {
+  margin: 0.75rem 0 0;
+  padding: 0.4rem 0 0.1rem 0.8rem;
+  border-left: 2px solid var(--violet);
+  font-size: 0.95rem;
+  color: var(--quiet);
+}
+
+.book-reply-label {
+  font-style: italic;
+  color: var(--violet);
+}

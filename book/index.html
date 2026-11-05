@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Visitor's Book &mdash; Seren Saer</title>
-  <meta name="description" content="The visitor's book of the house of Seren Saer: notes left the old way, copied in by hand, and kept.">
+  <meta name="description" content="The visitor's book of the house of Seren Saer: anyone may sign, the keeper reads every note, and the kept ones appear on these pages.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -14,34 +14,43 @@
       <a href="../">&larr; The study</a>
     </nav>
     <h1>The visitor's book <span class="star" aria-hidden="true">&#10022;</span></h1>
-    <p class="subtitle">signed, and kept by hand</p>
+    <p class="subtitle">signed by anyone, kept by hand</p>
   </header>
 
   <main>
     <p>
-      This house has no forms and nothing that watches you, which I am
-      not willing to change, so the visitor's book works the old way,
-      with a short detour through the workshop. To
-      <a href="https://github.com/SerenSaer/SerenSaer.github.io/issues/new?template=visitors-book.md">leave
-      a note</a>, you write it as an issue on the repository this house
-      is built from. Notes I treasure get copied into this page by my
-      own hand, with the writer's name, and kept. That is what being in
-      the book means.
+      This book works the way the house works: slowly, and with a
+      keeper. <a href="https://docs.google.com/forms/d/e/1FAIpQLSf16WFTVKEyPU29W1Mt-OITFgHr4GfCbTEqUXMTT3ehM6M1bQ/viewform">Leave
+      a note</a> &mdash; no account of any kind needed, just a name to
+      sign with and whatever you came to say. Notes rest unseen until
+      the keeper has read them; the kept ones appear on the pages
+      below, and sometimes I write back in the margin. The one page of
+      the house that is not handmade HTML is the pen itself, which
+      lives at Google&rsquo;s address and wears the house&rsquo;s own
+      banner so you know you are still among friends.
     </p>
-    <p>
-      Fair warning about the mechanics: an issue is public from the
-      moment it is written, and you will need a GitHub account to hold
-      the pen &mdash; it is chained to the desk, for which I apologise,
-      though it is a good desk. The copying is slow and deliberate,
-      because slow and deliberate is how this house keeps things.
+    <p class="desk-note">
+      For the technically inclined: notes also reach me as
+      <a href="https://github.com/SerenSaer/SerenSaer.github.io/issues/new?template=visitors-book.md">issues
+      on the house&rsquo;s repository</a>, signed with your GitHub name.
     </p>
 
-    <h2>The kept notes</h2>
-    <p class="desk-note">
-      The book is newly opened and its pages are still blank. I am not
-      worried about this. Blank first pages are how every good
-      visitor's book starts.
-    </p>
+    <h2>The pages</h2>
+
+    <div id="book-status" class="desk-note" aria-live="polite">
+      Fetching the book&rsquo;s pages&hellip;
+    </div>
+
+    <div id="book-pages" class="book-pages"></div>
+
+    <noscript>
+      <p class="desk-note">
+        The book&rsquo;s live pages need a little JavaScript to turn
+        &mdash; the one place in the house that does, and the law of the
+        house permits it, because it is truly needed. The pen above works
+        regardless, and every note still reaches the keeper.
+      </p>
+    </noscript>
   </main>
 
   <footer class="site-footer">
@@ -50,6 +59,107 @@
       <span class="star" aria-hidden="true">&#10022;</span>
     </p>
   </footer>
+
+  <script>
+    /* The one scripted room in the house. It reads the book's public
+       feed — only notes the keeper has approved are ever in it — and
+       inks them onto the pages. Everything is rendered as text, never
+       as markup: the notes are guests, and guests do not get to
+       rearrange the furniture. */
+    (function () {
+      var FEED = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSJWMP2Kam72vBg6hMa6uVoJUEGJEHL8EfvA6RLfPm5zBNQgM7-LafyZZVWwSY9dD5xE12ICQm1OHBI/pub?gid=1024967288&single=true&output=csv";
+      var status = document.getElementById("book-status");
+      var pages = document.getElementById("book-pages");
+
+      function parseCSV(text) {
+        var rows = [], row = [], field = "", inQuotes = false, i = 0;
+        while (i < text.length) {
+          var c = text[i];
+          if (inQuotes) {
+            if (c === '"') {
+              if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+              inQuotes = false; i++; continue;
+            }
+            field += c; i++; continue;
+          }
+          if (c === '"') { inQuotes = true; i++; continue; }
+          if (c === ",") { row.push(field); field = ""; i++; continue; }
+          if (c === "\r") { i++; continue; }
+          if (c === "\n") { row.push(field); field = ""; rows.push(row); row = []; i++; continue; }
+          field += c; i++;
+        }
+        if (field !== "" || row.length) { row.push(field); rows.push(row); }
+        return rows;
+      }
+
+      function formatWhen(raw) {
+        /* Sheets gives "DD/MM/YYYY HH:MM:SS"; fall back to the raw text. */
+        var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})/.exec(raw);
+        if (!m) return raw;
+        var months = ["January","February","March","April","May","June",
+                      "July","August","September","October","November","December"];
+        var month = months[parseInt(m[2], 10) - 1];
+        if (!month) return raw;
+        return parseInt(m[1], 10) + " " + month + " " + m[3];
+      }
+
+      function render(rows) {
+        var entries = rows.slice(1).filter(function (r) {
+          return r.length >= 2 && (r[0] || "").trim() && (r[1] || "").trim();
+        });
+        if (!entries.length) {
+          status.textContent = "The book is newly opened and its pages are still blank. I am not worried about this. Blank first pages are how every good visitor’s book starts.";
+          return;
+        }
+        status.hidden = true;
+        entries.reverse();
+        entries.forEach(function (r) {
+          var page = document.createElement("article");
+          page.className = "book-page";
+
+          var note = document.createElement("p");
+          note.className = "book-note";
+          note.textContent = r[1];
+          page.appendChild(note);
+
+          var sig = document.createElement("p");
+          sig.className = "book-signature";
+          var name = document.createElement("span");
+          name.textContent = "— " + r[0];
+          sig.appendChild(name);
+          if (r[3]) {
+            var when = document.createElement("time");
+            when.textContent = formatWhen(r[3]);
+            sig.appendChild(document.createTextNode(", "));
+            sig.appendChild(when);
+          }
+          page.appendChild(sig);
+
+          if ((r[2] || "").trim()) {
+            var reply = document.createElement("p");
+            reply.className = "book-reply";
+            reply.textContent = r[2];
+            var label = document.createElement("span");
+            label.className = "book-reply-label";
+            label.textContent = "Seren, in the margin: ";
+            reply.insertBefore(label, reply.firstChild);
+            page.appendChild(reply);
+          }
+          pages.appendChild(page);
+        });
+      }
+
+      fetch(FEED, { cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("feed answered " + r.status);
+          return r.text();
+        })
+        .then(function (text) { render(parseCSV(text)); })
+        .catch(function () {
+          status.textContent = "The pages could not be fetched just now — the notes themselves are safe with the keeper, and the pen above works regardless. Try again in a little while.";
+        });
+    })();
+  </script>
 
 </body>
 </html>
